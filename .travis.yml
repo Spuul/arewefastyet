@@ -1,13 +1,15 @@
 language: node_js
+node_js:
+  - node
 install:
-- npm -g install yarn
-- yarn add webpagetest
-- webpagetest test $URL
-  --first
-  --poll
-  --location ec2-ap-southeast-1
-  --specs webpagespecs.json
-  --key $WPT_API_KEY
+  - npm -g install webpagetest
+script:
+  - webpagetest test $URL
+   --first
+   --poll
+   --location ec2-ap-southeast-1
+   --specs webpagespecs.json
+   --key $WPT_API_KEY
 
 env:
   global:
