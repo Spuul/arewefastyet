@@ -1,0 +1,14 @@
+language: node_js
+install:
+- npm -g install yarn
+- yarn add webpagetest
+- webpagetest test $URL
+  --first
+  --poll
+  --location ec2-ap-southeast-1
+  --specs webpagespecs.json
+  --key $WPT_API_KEY
+
+env:
+  global:
+    secure: kNfe6p6OWoBTDAGCULuc+5Dexr5Gpt/vGmn8LHcODR5NzMM4ClJ/seHntFSmh4Ye+0bsW+yOBHc+5JCG3KOPagsgG9LZL4cs6Jh0lJwGoLXE2Awm42yyXsrlSpa7TaUlqxPCVEiR0eiMg9WynvNs3vebzeMoOGERXrasU4HkP/KKrYqkVFbsBmq49Ztqchb5yH+Mfvw5epYSS0tKaJ/KdJx5V5TnZqrVEPTW3Of4dvLp3Xula5l8NvXTMdZuYSonxDXgUrFCYwVAb/4kfL3bOkl+ZuJ5KR6wVNy9Xw4+TfgjeTJ6klkglOFSbimlFhDCv6E/oXBC58PjxDi+spf7D7/vwCV+5MwUTB1mXDjF5/sBe4WL02acrdjPHsXmpdJt/AN8aW0AHMOx2FLgA/rXaevnz1vx+9Uh+TXVIqYPqmBsOVQoyj1uPKZJDHhiuEx8gjGrVsOHwXwzc3uP5mAm3UHJvgH8TrhUfE//coOT0Rruj2ALp3fLFyFS2N+bF0IrbNPWQXSM7ERczEnNjoFs6Cc01u3BwV9ElKeSJjarVjWQlvF+fsf+MsLpCeof2CkhpTvKpwkqevmirOS8Kge/lPyPftdn26MLLE5m/geq9qvxocDbp03mRmyH9nc1y25bH0TbcPzDqzqOqOjJXrW5sXDvDk1lnXM//fQsG+tlk0Y=
